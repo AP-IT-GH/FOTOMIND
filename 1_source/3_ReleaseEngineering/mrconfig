@@ -1,0 +1,17 @@
+[1_VersionControlled/werk/external_lectures]
+checkout = git clone 'git@bitbucket.org:jeroendoggen/external_lectures.git' 'external_lectures'
+
+[1_VersionControlled/LaTeX/AP-Latex-beamer-template]
+checkout = git clone 'git@github.com:jeroendoggen/AP-Latex-beamer-template.git' 'AP-Latex-beamer-template'
+
+[1_VersionControlled/LaTeX/AP-latex-thesis-template]
+checkout = git clone 'git@github.com:jeroendoggen/AP-latex-thesis-template.git' 'AP-latex-thesis-template'
+
+[1_VersionControlled/LaTeX/latex-handouts-builder]
+checkout = git clone 'git@github.com:jeroendoggen/latex-handouts-builder.git' 'latex-handouts-builder'
+
+[1_VersionControlled/Python/blackboard-analysis-tools]
+checkout = git clone 'git@github.com:jeroendoggen/blackboard-analysis-tools.git' 'blackboard-analysis-tools'
+
+[1_VersionControlled/scripts-tools-misc]
+checkout = git clone 'git@github.com:jeroendoggen/scripts-tools-misc.git' 'scripts-tools-misc'
