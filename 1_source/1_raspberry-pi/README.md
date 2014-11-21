@@ -26,6 +26,19 @@ In this files we will add a line:
 <code>tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=100m   0 0 </code>
 Now we have a 100MB ramdisk which we will be using in the next steps in order to process the pictures fast.
 </p>
+<p>
+Now we start with installing gphoto. <br/>
+<code>sudo apt-get update</code><br/>
+<code>sudo apt-get upgrade</code><br/>
+<code>sudo apt-get install gphoto2</code><br/>
+We need the latest version in order to achieve maximum compatibility we use gphoto2-updater<br/>
+<code>
+wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-updater.sh <br/>
+chmod +x gphoto2-updater.sh <br/>
+sudo ./gphoto2-updater.sh <br/>
+</code>
+We should be able to use a camera at this moment.
+</p>
 # Sources #
 <div>
 Raspberry Pi image:</br>
@@ -38,6 +51,14 @@ http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.
 <div>
 Ramdisk:<br/>
 http://www.jamescoyle.net/how-to/943-create-a-ram-disk-in-linux
+</div>
+<div>
+gphoto download:<br/>
+http://sourceforge.net/projects/gphoto/files/latest/download?source=files
+</div>
+<div>
+gphoto2-updater:<br/>
+https://github.com/gonzalo/gphoto2-updater
 </div>
 # Reminder #
 username for our pi is 'pi' and password is 'raspberrypi'
