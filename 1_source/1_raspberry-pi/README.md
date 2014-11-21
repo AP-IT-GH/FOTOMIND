@@ -18,8 +18,13 @@ gateway 192.168.0.1
 we now save and exit the file. Once we reboot the changes we made will be applied. </br>
 When the reboot is complete we can test SSH (which is configured out of the box). We use Putty from a client computer to connect to our Raspberry Pi over the network.
 </p>
-
-
+<p>
+Now that we have our Raspberry Pi up and running we are going to create a ramdisk. We will be using one in order to avoid writing photo's from the camera's to the internal SD card of the Raspberry Pi. This has 2 big advantages. The SD card will not wear off under heavy load and we can process our pictures much faster.</br>
+We start by making a directory where we are going to mount our newly made ramdisk. <code>mkdir /mnt/ramdisk</code> then we will be making a 100MB ramdisk. A generic command is specified as followed: <code>mount -t [Type] -o size=[Size] [Fstype] [Mountpoint]</code> where <code>[Type]</code> is the type of ram to use, we will be using tmpfs in order to specify a vast amount of storage. We will make <code>[Size]</code> around a 100MB in order to have enough cache when shooting pictures. As <code>[Fstype]</code> we will use tmpfs. And our <code>[Mountpoint]</code> will be the directory we have created before. Our command looks like this: <code>mount -t tmpfs -o size=100m tmpfs /mnt/ramdisk</code>. In order to have this directory available over a reboot we add it to the fstab to let it mount when the Raspberry Pi boots. However the contents will not live over a reboot. <br/>
+<code>sudo nano /etc/fstab</code> <br/>
+In this files we will add a line:
+<code>tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=100m   0 0 </code>
+Now we have a 100MB ramdisk which we will be using in the next steps in order to process the pictures fast.
 </p>
 # Sources #
 <div>
@@ -29,6 +34,10 @@ http://downloads.raspberrypi.org/raspbian_latest
 <div>
 Win32DiskImager:</br>
 http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-install.exe/download
+</div>
+<div>
+Ramdisk:<br/>
+http://www.jamescoyle.net/how-to/943-create-a-ram-disk-in-linux
 </div>
 # Reminder #
 username for our pi is 'pi' and password is 'raspberrypi'
