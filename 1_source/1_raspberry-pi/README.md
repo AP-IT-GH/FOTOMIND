@@ -16,7 +16,8 @@ gateway 192.168.0.1
 </code>
 </br>
 we now save and exit the file. Once we reboot the changes we made will be applied. </br>
-When the reboot is complete we can test SSH (which is configured out of the box). We use Putty from a client computer to connect to our Raspberry Pi over the network.
+When the reboot is complete we can test SSH (which is configured out of the box). We use Putty from a client computer to connect to our Raspberry Pi over the network.<br/>
+Another option is to edit the cmdline.txt in the boot partition as described here: (http://pihw.wordpress.com/guides/direct-network-connection/). We will be using this method because it's easier to switch between static and dynamic ip addresses without the need for an external screen and keyboard directly connected to the Raspberry Pi.
 </p>
 <p>
 Now that we have our Raspberry Pi up and running we are going to create a ramdisk. We will be using one in order to avoid writing photo's from the camera's to the internal SD card of the Raspberry Pi. This has 2 big advantages. The SD card will not wear off under heavy load and we can process our pictures much faster.</br>
@@ -47,6 +48,10 @@ http://downloads.raspberrypi.org/raspbian_latest
 <div>
 Win32DiskImager:</br>
 http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-install.exe/download
+</div>
+<div>
+Access raspberry pi over direct ethernet<br/>
+http://pihw.wordpress.com/guides/direct-network-connection/
 </div>
 <div>
 Ramdisk:<br/>
