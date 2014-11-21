@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-up
 chmod +x gphoto2-updater.sh <br/>
 sudo ./gphoto2-updater.sh <br/>
 </code>
-We should be able to use a camera at this moment.
+After executing the script we can run gphoto from /usr/bin/gphoto. We should be able to use a camera at this moment.
 </p>
 # Sources #
 <div>
