@@ -164,5 +164,45 @@ The server's purpose is to provide a simpel webpage for downloading or viewing p
 			</ol>
 	</li>
 </ul>
+##Box Desing##
+The complete project should result in 3 black boxes (the 3 boxes are open for discussion):
+<ul>
+	<li>
+		An input box connectable to a computer using USB
+		<ol>
+			<li>
+				input: single usb-B
+			</li>
+		</ol>		
+	</li>
+	<li>
+		A big output box with more arduino's for mulitple camera's
+		<ol>
+			<li>
+				input: power for arduino's and raspberry pi
+			</li>
+			<li>
+				ethernet connection for raspberry pi 
+			</li>
+			<li>
+				multiple connection for camera trigger: preferable a 3.5mm jack or something common
+			</li>
+			<li>
+				multiple connection for camera data: preferable a quadruple usb hub
+			</li>
+			<li>
+				something i missed
+			</li>
+		</ol>
+	</li>
+	<li>	
+		A little output box with one arduino for one camera
+		<ol>
+			<li>
+				like the big output box but with less connections (duh)
+			</li>
+		</ol>
+	</li>
+</ul>
 
 
