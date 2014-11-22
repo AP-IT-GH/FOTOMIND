@@ -6,7 +6,7 @@ $(document)
       if(del)
       	alert("Photo\'s deleted!!");
       else
-      	//alert("Photo\'s NOT deleted!!");
+        alert("Photo\'s NOT deleted!!");
     });
     
     $('#save_btn').click(function(){
