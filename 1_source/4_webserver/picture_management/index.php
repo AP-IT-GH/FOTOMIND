@@ -26,38 +26,28 @@
 
 <body id="home">
 
-
+<h1>PhotoMind</h1>
+<h2>Picture Manager</h2>
+<br />
+<br />
+<select >//Add selection changed function to edit content and folders...
+<option>Choose Project...</option>
+</select><br />
+<select >//Add Add this when selected a project...
+<option>Choose Camera Group...</option>
+</select><br /><br />
 <div class="ui buttons">
   <div id="save_btn" class="ui green button">Save</div>
   <div class="or"></div>
   <div id="delete_btn" class="ui red button">Delete</div>
-</div>
+</div><br /><br />
 
 
-<!-- GRID  
-<div class="five column doubling ui grid">
-  <div class="column">
-    <div class="ui segment">
-      
-    </div>
-  </div>
-  <div class="column">
-    <div class="ui segment">
-      
-    </div>
-  </div>
-  <div class="column">
-    <div class="ui segment">
-      
-    </div>
-  </div>
-</div>
-
-END GRID --!>
-<select multiple="multiple" class="image-picker show-labels show-html">
-  <option data-img-src="http://placekitten.com/180/200" value="1">dslr0001.jpg</option>
-  <option data-img-src="http://placekitten.com/180/200" value="2">dslr0002.jpg</option>
-  <option data-img-src="http://placekitten.com/180/200" value="3">dslr0003.jpg</option>
+<select id="image_grid" multiple="multiple" class="image-picker show-labels show-html">
+<!--No images found-->
+  <option data-img-src="http://placekitten.com/180/200" value="dslr0001.jpg">dslr0001.jpg</option>
+  <option data-img-src="http://placekitten.com/180/200" value="http://placekitten.com/180/200">dslr0002.jpg</option>
+  <option data-img-src="http://placekitten.com/180/200" value="http://placekitten.com/180/200.jpg">dslr0003.jpg</option>
 
 </select>
 
