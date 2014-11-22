@@ -8,4 +8,4 @@ This is the management module to collect and organize the pictures.
 - Add location/group 
 
 ## Organisation
-The folder structure is as followed /DATA/<project_name>/<camera_group>/<picture.ext>
+The folder structure is as followed /DATA/project_name/camera_group/picture.ext
