@@ -3,6 +3,6 @@
 All files on the webserver to collect, show and edit the pictures.
 This is the management module to collect and organize the pictures.
 
-Upload section
+## Upload section
 - Send pictures with POST to http://xxx.xxx.xxx.xxx:8888/fotomind/upload.php
 - Add location/group 
