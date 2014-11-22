@@ -10,13 +10,15 @@ $(document)
     });
     
     $('#save_btn').click(function(){
-      alert("Photo\'s saved!!");
+      var values = $('#image_grid').val();
+      alert(values);
+      //alert("Photo\'s saved!!");
     });
   
     // Initialize the object
-    $("select").imagepicker({ show_label: true });
+    $("#image_grid").imagepicker({ show_label: true });
     // Retrieve the picker
-    $("select").data('picker');
+    $("#image_grid").data('picker');
       
     
     
