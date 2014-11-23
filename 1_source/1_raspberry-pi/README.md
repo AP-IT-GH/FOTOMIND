@@ -40,6 +40,71 @@ sudo ./gphoto2-updater.sh <br/>
 </code>
 After executing the script we can run gphoto from /usr/bin/gphoto. We should be able to use a camera at this moment.
 </p>
+<p>
+We write a shell script <code>GetFileFromDirectoryAndSendToServer.sh</code> and place it in our home directory<code>/home/pi</code>. The purpose of this script is that is being run right after gphoto has detected there was an image captured from a camera. The script will do folowing things:<br/>
+<ol>
+	<li>
+		search for the file it has to upload
+	</li>
+	<li>
+		upload the file to the server
+	</li>
+	<li>
+		remove the file from the ramdisk
+	</li>
+</ol>
+<code>
+<div>
+	We are using the bash shell
+</div>
+	#!/bin/bash <br/>
+<div>
+	this is the directory we made when mounting the ramdisk for temporary storage
+</div>
+	dir='/mnt/ramdisk'
+<div>
+	we select one file from the temporary storage
+</div>
+	file=$(/bin/ls -1 "$dir" | head -1) <br/>
+<div>
+	we make the path so that is in a good format
+</div>
+	path=$(readlink --canonicalize "$dir/$file") <br/>
+<div>
+	define where our server script is located
+</div>
+	server='http://www.verhofstadt.eu/upload.php'<br/>
+<div>
+	get the mac adress for unique identifiquation of Raspberry Pi's
+</div>
+	mac=$(ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}')<br/>
+<div>
+	Post to the form located at $server with input fields 'mac' and 'image'
+</div>
+	curl -F "mac=$mac" -F "image=$path" $server<br/>
+<div>
+	remove the photo we just posted
+</div>
+	rm $path 
+</code> <br/>
+However we want to run this script whenever an image is taken and that's where gphoto comes in. Gphoto has the built in command  <code>gphoto2 --capture-tethered --hook-script [PATH TO SCRIPT]</code> where we will fill in our script for postprocessing. We would like the Raspberry Pi to be listening for such events the moment it boots. So we are going to write the script <code>GphotoStartupScript.sh</code> this script has to:<br/>
+<ol>
+	<li>
+		start up at boot time
+	</li>
+	<li>
+		run the code <code></code>
+	</li>
+</ol>
+We place the script in our home folder <br/>
+<code>
+	#!/bin/bash<br/>
+	#saved at /home/pi<br/>
+	cd /mnt/ramdisk<br/>
+	/usr/local/bin/gphoto2 --capture-tethered --hook-script /home/pi/GetFileFromDirectoryAndSendToServer.sh<br/>
+</code>
+It will search for camera's and use them if there are no cameras connected at startup you can run the script manually. We now need to add it to the <code>/etc/rc.local</code> file so that it will run during startup.
+</p>
 # Sources #
 <div>
 Raspberry Pi image:</br>
