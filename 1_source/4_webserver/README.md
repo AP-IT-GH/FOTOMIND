@@ -9,3 +9,6 @@ This is the management module to collect and organize the pictures.
 
 ## Organisation
 The folder structure is as followed /DATA/project_name/camera_group/picture.ext
+
+## Upload
+To upload an image, use POST and send the image as a 'file'. The group name has to be send under the name 'group'.
