@@ -164,7 +164,7 @@ The server's purpose is to provide a simpel webpage for downloading or viewing p
 			</ol>
 	</li>
 </ul>
-##Box Desing##
+##Box Design##
 The complete project should result in 3 black boxes (the 3 boxes are open for discussion):
 <ul>
 	<li>
