@@ -23,7 +23,8 @@ function getContent($dir)
     if ($result === '.' or $result === '..' or $result === '' or $result[0] === '.') continue;
       $export[] = $result;
   }
-  print_r($export);
+  echo json_encode( $export );
+  //print_r($export);
 }
 
 ?>
