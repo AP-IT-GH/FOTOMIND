@@ -5,10 +5,8 @@ This is the management module to collect and organize the pictures.
 
 ## Upload section
 - Send pictures with POST to http://xxx.xxx.xxx.xxx:8888/fotomind/upload.php
-- Add location/group 
+- Send image as 'file'
+- Send group name as 'group'
 
 ## Organisation
 The folder structure is as followed /DATA/project_name/camera_group/picture.ext
-
-## Upload
-To upload an image, use POST and send the image as a 'file'. The group name has to be send under the name 'group'.
