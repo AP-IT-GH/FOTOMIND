@@ -2,40 +2,39 @@
 //UPLOAD IMAGES	
 
 try {
-    $allow = array("jpg", "jpeg", "gif", "png");
-	$todir = 'user_images/';		
-	if (!!$_FILES['file']['tmp_name'] ) // is the file uploaded yet?
-	{
-	$info = explode('.', strtolower( $_FILES['file']['name']) ); // whats the extension of the file
-	if ( in_array( end($info), $allow) ) // is this file allowed
-	{
-		$new_file_name = $todir . $this->user_id . '.' . end($info);
-		if ( move_uploaded_file( $_FILES['file']['tmp_name'], $new_file_name) )
+  	$allow = array("jpg", "jpeg", "gif", "png", "nef");
+	$projectname = 'Staking';
+	if (isset($_POST['group'])) {
+		$groupname = str_replace(':','_',$_POST['group']);
+		$todir = "DATA/$projectname/$groupname/";
+		if (!!$_FILES['file']['tmp_name'] ) // is the file uploaded yet?
 		{
-			$file_location = '/' . $new_file_name;
-			$this->foto = $file_location;
+			$fileName = $_FILES['file']['name'];
+			$info = explode('.', strtolower( $_FILES['file']['name']) ); // whats the extension of the file
+			if ( in_array( end($info), $allow) ) // is this file allowed
+			{
+				if (!file_exists($todir)) {
+				    mkdir($todir, 0777, true);
+				}
+				$new_file_name = $todir . $fileName;
+				if ( move_uploaded_file( $_FILES['file']['tmp_name'], $new_file_name) )
+				{
+					echo "done...";
+				}
+			}
+			else
+			{
+				throw new Exception('This file extension is not allowed.');		// error this file extension is not allowed.
+			}
+		}
+		else
+		{
+			throw new Exception('Failed to upload!');
 		}
 	}
 	else
-	{
-		throw new Exception('');		// error this file extension is not allowed, default avatar is set.
-		//echo "false";
-	}
-}
-else
-{
-	throw new Exception('Failed to upload!');
-	//echo "Failed to upload!";
-}
+		throw new Exception("Group is not set", 1);
 } catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
-if($_POST)
-{
-
-}
-else
-{
-echo "send something...";
+	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 ?>
