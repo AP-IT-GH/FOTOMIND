@@ -10,11 +10,11 @@ class nRF
 {
   public:
 	nRF();
-	void Init();
-    void Send(String Message);
-	RF24 rfModule;
+    void Send(String Message);	
+	void nRF_receive();
   private:
     int messageSize;
+	const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };
 };
 
 #endif

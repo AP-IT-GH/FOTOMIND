@@ -3,11 +3,14 @@
 #include "nRF24L01.h"
 #include "RF24.h"
 
-nRF nRFModule;
+nRF nRFModule = nRF();
 
 void setup()
 {
-  nRFModule.Init();
+  
 }
-
+void loop()
+{
+  
+}
 
