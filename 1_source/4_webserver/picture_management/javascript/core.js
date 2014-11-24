@@ -18,7 +18,7 @@ $(document)
          }
       })
       .done(function( json ) {
-        alert("Images deleted: "+json);
+        alert("Images deleted");
       });  
 
     }
@@ -27,8 +27,11 @@ $(document)
 
   $('#save_btn').click(function(){
     var values = $('#image_grid').val();
-    alert(values);
-      //alert("Photo\'s saved!!");
+    var groupname = $('#group_name').val();
+    var projectname = $('#project_name').val();
+
+     var url = document.URL+"back_end/save_images.php?images_arr="+values+"&group="+groupname+"&project="+projectname;
+    window.open(url, '_blank');
     });
   
     // Initialize the object
