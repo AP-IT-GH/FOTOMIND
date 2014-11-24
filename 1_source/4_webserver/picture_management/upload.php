@@ -1,8 +1,9 @@
 <?php
 //UPLOAD IMAGES	
+//ini_set('display_errors', 'On');
 
 try {
-  	$allow = array("jpg", "jpeg", "gif", "png", "nef");
+  	$allow = array("jpg", "jpeg", "gif", "png", "nef", "cr2");
 	$projectname = 'Staking';
 	if (isset($_POST['group'])) {
 		$groupname = str_replace(':','_',$_POST['group']);
