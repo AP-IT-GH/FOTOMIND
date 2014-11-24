@@ -19,6 +19,7 @@ $(document)
           }
         })
         .done(function( json ) {
+          reload_images();
           alert("Images deleted");
         });  
       }
@@ -89,6 +90,10 @@ $(document)
     });
 
     $('#group_name').change(function () {
+      reload_images();
+    });
+
+    $("#reload_images").click(function(){
       reload_images();
     });
 
