@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 'On');
+//ini_set('display_errors', 'On');
 try {
 	if ( !isset($_GET['images_arr']) && !isset($_GET['group']) && !isset($_GET['project']) ) throw new Exception("POST was not complete...", 1);
 	# create new zip opbject
