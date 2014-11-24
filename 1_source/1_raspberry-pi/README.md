@@ -105,6 +105,31 @@ We place the script in our home folder <br/>
 </code>
 It will search for camera's and use them if there are no cameras connected at startup you can run the script manually. We now need to add it to the <code>/etc/rc.local</code> file so that it will run during startup.
 </p>
+
+# Practical approach #
+<div>
+<p>We started of with a Nikon D3100 for testing, but experienced connection problems. The Canon 50d showed us no problems. </p>
+</div>
+<div>
+<p>Next we removed the <code>-filename</code> variable in the <code>GphotoStartupScript.sh</code>, because it didn't work. </p>
+</div>
+<div>
+<p>For local testing purposes we changed the  server parameter to <code>server='http://192.168.1.121:8888/fotomind/upload.php'</code> & finetuned the <code>"image=@$path"</code> variable in the <code>GetFileFromDirectoryAndSendToServer.sh</code>. Everytime we take a photo, the photo is uploaded to the server in a matter of seconds.</p>
+</div>
+<div>
+<p>Some other minor problem we conquered: a full RAM disk, because of that we added a <code>rm</code> command so the file is removed from the RAMdisk everytime it is uploaded.</p>
+</div>
+<div>
+<p>Next we succesfully made the script execute on startup from the raspberry. This proces has some easy steps:</p>
+<ol>	
+	<li>Power on camera</li>
+	<li>Connect the camera to the RaspberryPi</li>
+	<li>Fire up RaspberryPi</li>
+	<li>Wait a little while for the RaspberryPi to powerup</li>
+	<li>Take a picture</li>
+</ol>
+</div>
+
 # Sources #
 <div>
 Raspberry Pi image:</br>
