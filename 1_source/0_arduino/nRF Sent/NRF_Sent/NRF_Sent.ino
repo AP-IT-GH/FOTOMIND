@@ -14,13 +14,13 @@ int msg[1];
 int var = 0;
 RF24 radio(9,10);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
-void setup(void){
+void setup(){
   Serial.begin(9600);
   radio.begin();
   radio.openWritingPipe(pipe);
   radio.powerUp();
 }
-void loop(void)
+void loop()
 {
   var++;
   String theMessage = (String)var;
