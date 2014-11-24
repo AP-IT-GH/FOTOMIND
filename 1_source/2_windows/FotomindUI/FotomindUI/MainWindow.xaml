@@ -1,0 +1,34 @@
+﻿<Window x:Class="FotomindUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fotomindUi="clr-namespace:FotomindUI"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <fotomindUi:ArduinoCommandsList x:Key="ArdCmds"/>
+    </Window.Resources>
+        <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Name="SerialPanel">
+                <Label Margin="0,0,5,0">Port:</Label>
+                <ComboBox Margin="0,0,5,0" Name="cboComPort" MinWidth="50" SelectionChanged="cboComPort_SelectionChanged"></ComboBox>
+                <Button Margin="0,0,5,0" Name="btnComPortRefresh" Click="btnComPortRefresh_Click">Refresh Com</Button>
+                <Label Margin="0,0,5,0">BaudRate</Label>
+                <ComboBox Margin="0,0,5,0" Name="cboBaudRate" MinWidth="50" SelectionChanged="cboBaudRate_SelectionChanged"></ComboBox>
+                <Button Margin="0,0,5,0" Name="btnOpenPort" Click="btnOpenPort_Click">Open Port</Button>
+                <Button Margin="0,0,5,0" Name="btnClosePort" Click="btnClosePort_Click">Close Port</Button>
+            </StackPanel>
+            <Label>List of commands to send:</Label>
+            <ListBox Name="listCommands" MinHeight="100" DataContext="{Binding Source={StaticResource ArdCmds}}" SelectionChanged="listCommands_SelectionChanged" DataContextChanged="listCommands_DataContextChanged"></ListBox>
+            <StackPanel Name="CommandPanel" Orientation="Horizontal">
+                <Button Name="btnSend" Width="100" Click="btnSend_Click">Send To Arduino</Button>
+                <Button Name="btnDelete" Width="100">Delete Command</Button>
+                <Button Name="btnAdd" Width="100">Add New</Button>
+                <Button Name="btnShow" Width="100" Click="btnShow_Click">Show Selected</Button>
+            </StackPanel>
+            <Label>New Command Title:</Label>
+            <TextBox></TextBox>
+            <Label>New Command:</Label>
+            <TextBox MinHeight="50" Name="tbNewCmd"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
