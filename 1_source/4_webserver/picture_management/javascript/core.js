@@ -104,7 +104,7 @@
             $('#image_grid').empty();
             var optionstr = "";
             $.each(json, function(i, value) {
-              optionstr+="<option data-img-src='http://placehold.it/200x200' value='"+value+"'>"+value+"</option>";
+              optionstr+="<option data-img-src='./DATA/"+dropProject+"/"+dropGroup+"/"+value+"' value='"+value+"'>"+value+"</option>";
             });
             $('#image_grid').html(optionstr);
             $("#image_grid").imagepicker({ show_label: true });
