@@ -35,7 +35,7 @@ The master arduino will be the arduino directly connected with a laptop. <br/>
 			</ol>
 	</li>
 </ul>
-## Transmission Library ##
+## Transmission Library - Baellon & Tom##
 The master arduino will be the arduino directly connected with a laptop. <br/>
 <ul>
 	<li>
@@ -50,7 +50,7 @@ The master arduino will be the arduino directly connected with a laptop. <br/>
 		</ol>
 	</li>	
 </ul>
-##Master Receiver Arduino ##
+##Master Receiver Arduino##
 The master reciever arduino will be the one who will control other arduino's 'locally'. The master receiver arduino will have the functionality to adress other arduino's and adress a camera himself.
 <ul>
 	<li>
@@ -79,7 +79,7 @@ The master reciever arduino will be the one who will control other arduino's 'lo
 			</ol>
 	</li>
 </ul>
-##Slave Receiver Arduino ##
+##Slave Receiver Arduino - Snijers & Ikhlas##
 The Slave receiver arduino has to be able to trigger a camera when a certain condition is met.
 <ul>
 	<li>
@@ -111,7 +111,7 @@ The Slave receiver arduino has to be able to trigger a camera when a certain con
 			</ol>
 	</li>
 </ul>
-##Raspberry Pi Behind a Master-slave arduino camera setup ##
+##Raspberry Pi Behind a Master-slave arduino camera setup - Robin & Frederik##
 The Raspberry Pi will collect the photo's from the camera's in his cluster and send these 'realtime' to a server
 <ul>
 	<li>
@@ -135,7 +135,7 @@ The Raspberry Pi will collect the photo's from the camera's in his cluster and s
 		Write a script which will upload the taken photo's to an online database
 	</li>
 </ul>
-##Server##
+##Server - Bernd#
 The server's purpose is to provide a simpel webpage for downloading or viewing photo's. On this server will also be running a database for storage of photo's (url on server)
 <ul>
 	<li>
@@ -164,7 +164,7 @@ The server's purpose is to provide a simpel webpage for downloading or viewing p
 			</ol>
 	</li>
 </ul>
-##Box Design##
+##Box Design - Thomas##
 The complete project should result in 3 black boxes (the 3 boxes are open for discussion):
 <ul>
 	<li>
