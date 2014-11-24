@@ -35,15 +35,24 @@
   </select><br /><br />
 
   <div id="images_grid">
+    <!-- SAVE AND DELETE BTN -->
     <div class="ui buttons">
       <div id="save_btn" class="ui green button">Save</div>
       <div class="or"></div>
       <div id="delete_btn" class="ui red button">Delete</div>
-    </div><br /><br />
+    </div>
+    <!-- CHECK UNCHECK BTN -->
+    <div class="ui buttons">
+      <div id="check_all" class="ui button"><i class="check square icon"></i></div>
+      <div class="or"></div>
+      <div id="uncheck_all" class="ui button"><i class="minus square outline icon"></i></div>
+    </div>
+    <br /><br />
+    <!-- RELOAD BTN -->
+    <div id="reload_images" class="ui icon button"><i class="refresh icon"></i></div>
+    <br /><br />
 
     <select id="image_grid" multiple="multiple" class="image-picker show-labels show-html">
-      <!--No images found-->
-      <option data-img-src="http://placehold.it/350x350" value="dslr0001.jpg">dslr0001.jpg</option>
     </select>
   </div>
 </body>
