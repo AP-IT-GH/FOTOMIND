@@ -21,7 +21,7 @@ void setup(void){
 }
 void loop(void)
 {
-  String theMessage = "Hello there!";
+  String theMessage = "Hello there Cedric!";
   int messageSize = theMessage.length();
   for (int i = 0; i < messageSize; i++) {
     int charToSend[1];
