@@ -21,7 +21,7 @@ void setup(void){
   radio.openReadingPipe(1,pipe);
   radio.startListening();
 }
-void loop(void){
+void loop(){
   if (radio.available()){
     bool done = false;  
       done = radio.read(msg, 1); 
