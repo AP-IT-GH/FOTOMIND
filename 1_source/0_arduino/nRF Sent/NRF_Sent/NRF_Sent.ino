@@ -11,6 +11,7 @@ message.
 */
  
 int msg[1];
+int var = 0;
 RF24 radio(9,10);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 void setup(void){
@@ -21,7 +22,8 @@ void setup(void){
 }
 void loop(void)
 {
-  String theMessage = "Hello there Cedric!";
+  var++;
+  String theMessage = (String)var;
   int messageSize = theMessage.length();
   for (int i = 0; i < messageSize; i++) {
     int charToSend[1];
