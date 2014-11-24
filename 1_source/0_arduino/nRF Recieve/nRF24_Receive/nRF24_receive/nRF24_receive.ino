@@ -34,8 +34,4 @@ void loop(void){
        theMessage= ""; 
       }
    }
-   else
-   {
-     Serial.println("Error");
-   }
 }
