@@ -97,6 +97,16 @@ $(document)
       reload_images();
     });
 
+    $("#check_all").click(function(){
+      $('#image_grid option').prop('selected', true);
+      $("#image_grid").data('picker').sync_picker_with_select();
+    });
+
+    $("#uncheck_all").click(function(){
+      $('#image_grid option').prop('selected', false);
+      $("#image_grid").data('picker').sync_picker_with_select();
+    });
+
 });
 
 function reload_images(){
