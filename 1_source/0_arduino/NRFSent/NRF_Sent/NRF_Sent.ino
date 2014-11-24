@@ -16,8 +16,11 @@ const uint64_t pipe = 0xE8E8F0F0E1LL;
 void setup(void){
   Serial.begin(9600);
   radio.begin();
-  radio.openWritingPipe(pipe);}
-void loop(void){
+  radio.openWritingPipe(pipe);
+  radio.powerUp();
+}
+void loop(void)
+{
   String theMessage = "Hello there!";
   int messageSize = theMessage.length();
   for (int i = 0; i < messageSize; i++) {
@@ -28,6 +31,7 @@ void loop(void){
 //send the 'terminate string' value...  
   msg[0] = 2; 
   radio.write(msg,1);
+  Serial.println("Sended");
 /*delay sending for a short period of time.  radio.powerDown()/radio.powerupp
 //with a delay in between have worked well for this purpose(just using delay seems to
 //interrupt the transmission start). However, this method could still be improved
