@@ -2,7 +2,7 @@
  FOTOMIND is a remote to trigger a DSLR camera.
  A Project with Christian Munk, to create a 3D Image by combining multiple simultaneously taken pictures
 
-#Info about the project
+#Info about the project#
 
 
 -  Short article about the result of the original project in St. Pölten, Austria
@@ -22,3 +22,12 @@ Further info can be found in the following folders:
  * 2_hardware
  * 3_documentation
  * 4_presentation
+
+#Groups#
+
+We divided the project in different groups.
+
+- Input
+- Output
+- Transmission
+- Schematic and PCB Design
