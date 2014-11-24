@@ -3,8 +3,26 @@ $(document)
 
   $('#delete_btn').click(function(){
     var del = confirm("Are you sure you want to delete the photos?");
-    if(del)
-     alert("Photo\'s deleted!!");
+    if(del){
+      var values = $('#image_grid').val();
+      var groupname = $('#group_name').val();
+      var projectname = $('#project_name').val();
+
+      $.ajax({
+      type: "POST",
+      url: "./back_end/delete_images.php",
+      data: { 
+        images_arr: values,
+        group: groupname,
+        project: projectname
+         }
+      })
+      .done(function( json ) {
+        alert("Images deleted: "+json);
+      });  
+
+    }
+     
 });
 
   $('#save_btn').click(function(){
