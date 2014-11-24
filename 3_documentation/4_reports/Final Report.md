@@ -1,7 +1,7 @@
 # Smart Objects: Fotomind V2.0 #
 ## Introduction ##
 ### Memebers ###
-Cedric Baetens , Ikhlas Berazzi, Jef Gys, Tom Mampaey, Frederik Moonen, Thomas Mulder, Cedric Snijers, Robin Vercammen.
+Bernd Verhofstadt, Cedric Baetens , Ikhlas Berazzi, Jef Gys, Tom Mampaey, Frederik Moonen, Thomas Mulder, Cedric Snijers, Robin Vercammen.
 ### Project Supervisors ###
 Christian Munk (Austria), Jeroen Doggen.
 
