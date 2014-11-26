@@ -19,13 +19,12 @@ void setup()
 void loop()
 {
   distance = Dist.getDistanceCentimeter();
-    Serial.print("\nDistance in centimers: ");
+  Serial.print("\nDistance in centimers: ");
   Serial.print(distance);
-  if (distance < 20)
-  {
+ 
   camera.SinglePicture();
   delay(3000);
-  }
+  
  
   
 }
