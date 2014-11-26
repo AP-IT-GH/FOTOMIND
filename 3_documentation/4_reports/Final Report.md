@@ -1,6 +1,6 @@
 # Smart Objects: Fotomind#
 ## Introduction ##
-### Memebers ###
+### Members ###
 Bernd Verhofstadt, Cedric Baetens , Ikhlas Berazzi, Jef Gys, Tom Mampaey, Frederik Moonen, Thomas Mulder, Cedric Snijers, Robin Vercammen.
 ### Project Supervisors ###
 Christian Munk (Austria), Jeroen Doggen.
@@ -40,7 +40,12 @@ This setup has to be executed in a dark room. The shutter is constantly open, an
 </ol>
 ![Picture of Setup](https://copy.com/thumbs_public/1qdt7rBKIJxfFwKW/Image1.jpg?size=1024)
 <p>[Result High Speed Photography](https://copy.com/hnnhiVT3sFPKF8mY)
-<P>[Result of Time Lapse](https://www.youtube.com/watch?v=Lv71nvoqJXY)
+![HighSpeedZitrone](http://eaict.ap.be/wp-content/uploads/2014/07/Zitrone_Matrix_0.1sec2.gif)
+![HighSpeedKarotte](http://eaict.ap.be/wp-content/uploads/2014/07/Karotte-2_01sec.gif)
+Result of Time Lapse (click to open in YouTube)
+
+[![Result of Time Lapse](http://img.youtube.com/vi/Lv71nvoqJXY/0.jpg)](http://www.youtube.com/watch?v=Lv71nvoqJXY)
+
 ### Design ###
 ![Picture 1](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image10.jpg?size=512)
 ![Picture 2](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image7.jpg?size=1024)

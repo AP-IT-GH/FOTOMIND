@@ -31,3 +31,4 @@ We divided the project in different groups.
 - Output
 - Transmission
 - Schematic and PCB Design
+- Storage pictures

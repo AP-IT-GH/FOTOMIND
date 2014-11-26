@@ -19,7 +19,7 @@
             <ListBox Name="listCommands" MinHeight="100" ItemsSource="{Binding}" SelectionChanged="listCommands_SelectionChanged" DataContextChanged="listCommands_DataContextChanged"></ListBox>
             <StackPanel Name="CommandPanel" Orientation="Horizontal">
                 <Button Name="btnSend" Width="100" Click="btnSend_Click">Send To Arduino</Button>
-                <Button Name="btnDelete" Width="100">Delete Command</Button>
+                <Button Name="btnDelete" Width="100" Click="btnDelete_Click">Delete Command</Button>
                 <Button Name="btnAdd" Width="100" Click="btnAdd_Click">Add New</Button>
                 <Button Name="btnShow" Width="100" Click="btnShow_Click">Show Selected</Button>
             </StackPanel>

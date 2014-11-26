@@ -41,7 +41,15 @@ namespace FotomindUI
 
         public string ToStringDetailed()
         {
-            return Command.ToString();
+            string retstring = Command.ToString();
+            byte[] asciiBytes = Encoding.ASCII.GetBytes(retstring);
+            retstring += " = in ASCII: ";
+            foreach (byte b in asciiBytes)
+            {
+                retstring = retstring + b.ToString();
+            }
+            
+            return retstring;
         }
     }
 }
