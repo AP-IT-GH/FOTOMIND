@@ -1,12 +1,48 @@
-# Smart Objects: Fotomind V2.0 #
+# Smart Objects: Fotomind#
 ## Introduction ##
 ### Memebers ###
 Bernd Verhofstadt, Cedric Baetens , Ikhlas Berazzi, Jef Gys, Tom Mampaey, Frederik Moonen, Thomas Mulder, Cedric Snijers, Robin Vercammen.
 ### Project Supervisors ###
 Christian Munk (Austria), Jeroen Doggen.
-
 ## Description: Fotomind V1.0 ##
- FOTOMIND V1.0 is a project by Christian Munk. It is a remote trigger that allows to trigger by using external trigger.http://www.progressivefactory.com/projects/fotomind/ 
+FOTOMIND V1.0 is a project by Christian Munk. It is a remote that allows to trigger a DSLR caerma by using external trigger.
+### Interface ###
+<ol>
+<li>Button</li>
+<li>Potentiometer</li>
+<li>LED</li>
+<li>Display</li>
+</ol>
+### Connector List ###
+The fotomind is equipped with female jack connections (3.5mm), these connetions are inputs that allow to to trigger the camera when a sensor is connected. 
+<ol>
+<li>Photoresistor</li>
+<li>Microphone</li>
+<li>Piezo</li>
+</ol>
+### Features ###
+<ol>
+<li>LCD background light</li>
+<li>On/Off Switch</li>
+<li>9V external power supply</li>
+<li>Battery case for mobile use: 4 x AA</li>
+<li>2 rows 16 character LCD Display</li>
+<li>Background light</li>
+</ol>
+### Examples ###
+<ol>
+<li>Time Sequence/Lapse</li>
+Pictures are taken with a specific time interval.
+<li>Foto Trap</li>
+Take multiple pictures when sensor is triggered.
+<li>High speed fotography</li>
+This setup has to be executed in a dark room. The shutter is constantly open, an external flash is triggered and the shutter is closed when the laser beam is discontinued. 
+</ol>
+[Picture of Setup](https://copy.com/1qdt7rBKIJxfFwKW)
+<p>[Result](https://copy.com/hnnhiVT3sFPKF8mY)
+
+### Pictures ###
+[Picture ](https://copy.com/GHQAvVJfb3sU2DGc)
 
 ## Description: Fotomind V2.0 ##
 
