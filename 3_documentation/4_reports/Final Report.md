@@ -35,15 +35,23 @@ The fotomind is equipped with female jack connections (3.5mm), these connetions 
 Pictures are taken with a specific time interval.
 <li>Foto Trap</li>
 Take multiple pictures when sensor is triggered.
-<li>High speed fotography</li>
+<li>High speed Photography</li>
 This setup has to be executed in a dark room. The shutter is constantly open, an external flash is triggered and the shutter is closed when the laser beam is discontinued. 
 </ol>
 [Picture of Setup](https://copy.com/1qdt7rBKIJxfFwKW)
-<p>[Result](https://copy.com/hnnhiVT3sFPKF8mY)
-
-### Pictures ###
+<p>[Result High Speed Photography](https://copy.com/hnnhiVT3sFPKF8mY)
+<P>[Result of Time Lapse](https://www.youtube.com/watch?v=Lv71nvoqJXY)
+### Design ###
 [Picture ](https://copy.com/GHQAvVJfb3sU2DGc)
-
+### Extra Information
+-  Short article about the result of the original project in St. Pölten, Austria
+   [Link (Dutch)](http://eaict.ap.be/animation-summer-arduino-interaktiv/)
+- All basic information about the FOTOMIND 1.0 project
+   [Link](http://www.animationsummer.at/arduino-interaktiv/)
+- Site of Christian Munk where he places all his projects.
+   [Link](http://www.progressivefactory.com/)
+- Article about the collaboration between Artesis Plantijn University College    and St. Pölten University of Applied Sciences
+   [Link (Dutch)](https://www.ap.be/nieuws/experiment-met-computer-van-de-toekomst/2178)
 ## Description: Fotomind V2.0 ##
 
 
