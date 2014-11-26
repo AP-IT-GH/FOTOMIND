@@ -237,5 +237,11 @@ namespace FotomindUI
                 tbNewCmdTitle.Clear();
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            ArdCmds.Remove((ArduinoCommands)listCommands.SelectedItem);
+            SerializeCommands(ArdCmds);
+        }
     }
 }
