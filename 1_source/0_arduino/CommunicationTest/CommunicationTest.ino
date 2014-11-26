@@ -16,6 +16,10 @@ if (Serial.available() > 0) {
                 {
                   digitalWrite(testLed, HIGH);
                 }
+                if(incomingByte == 57)
+                {
+                  digitalWrite(testLed, LOW);
+                }
                 // say what you got:
                 //Serial.print("I received: ");
                 Serial.println(incomingByte, DEC);
