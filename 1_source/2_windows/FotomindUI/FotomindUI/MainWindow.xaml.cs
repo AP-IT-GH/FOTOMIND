@@ -29,14 +29,14 @@ namespace FotomindUI
         {
             InitializeComponent();
             listCommands.DataContext = ArdCmds;
-            ArdCmds = new ObservableCollection<ArduinoCommands>()
+            ArdCmds = new ObservableCollection<ArduinoCommands>
             {
-                new ArduinoCommands()
+                new ArduinoCommands
                 {
                     Title = "Take Picture",
                     Command = "Cmd for taking picture with arduino"
                 },
-                new ArduinoCommands()
+                new ArduinoCommands
                 {
                     Title = "Do something else",
                     Command = "Blablibloebla"
@@ -48,52 +48,77 @@ namespace FotomindUI
 
         private void btnComPortRefresh_Click(object sender, RoutedEventArgs e)
         {
-            cboComPort.Items.Clear();
-            addComs();
+            try
+            {
+                cboComPort.Items.Clear();
+                addComs();
+                lblStatus.Content = "Refreshed ComPorts";
+            }
+            catch (Exception)
+            {
+                
+                lblStatus.Content = "Could not refresh ComPorts";
+            }
+            
         }
 
         private void btnOpenPort_Click(object sender, RoutedEventArgs e)
         {
             if (cboComPort.SelectedItem.ToString() != "No Ports")
             {
-                SerialPort1.Open();
+                SerialPort1.PortName = cboComPort.SelectedItem.ToString();
+                SerialPort1.BaudRate = Convert.ToInt32(cboBaudRate.SelectedItem);
+                bool verify = SerialPort1.Open();
+                if (verify == true)
+                {
+                    lblStatus.Content = "Port opened";
+                }
+                else
+                {
+                    lblStatus.Content = "Could not open port";
+                }
             }
-            
         }
 
         private void btnClosePort_Click(object sender, RoutedEventArgs e)
         {
             SerialPort1.Close();
+            lblStatus.Content = "Port Closed";
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             addComs();
             listCommands.DataContext = ArdCmds;
+            listCommands.ItemsSource = ArdCmds;
         }
 
         private void addComs()
         {
             // read avaiable COM Ports: 
             string[] Portnames = SerialPort.GetPortNames();
-            if (Portnames == null)
+            if (!Portnames.Any())
             {
                 MessageBox.Show("There are no Com Ports detected!");
-                this.Close();
+                //this.Close();
             }
 
             foreach (string portname in Portnames)
             {
                 cboComPort.Items.Add(portname);
+                
             }
-            //cboComPort.Items.Add(Portnames);
             try
             {
                 cboComPort.Text = Portnames[0];
+                btnOpenPort.IsEnabled = true;
+                btnClosePort.IsEnabled = true;
             }
             catch (IndexOutOfRangeException)
             {
                 cboComPort.Items.Add("No Ports");
+                btnOpenPort.IsEnabled = false;
+                btnClosePort.IsEnabled = false;
             }
             if (cboBaudRate.Items.Count == 0)
             {
@@ -127,7 +152,9 @@ namespace FotomindUI
         {
             try
             {
-                MessageBox.Show(listCommands.SelectedItem.ToString());
+                ArduinoCommands temp = new ArduinoCommands();
+                temp = (ArduinoCommands) listCommands.SelectedItem;
+                MessageBox.Show(temp.ToStringDetailed());
             }
             catch (Exception)
             {
@@ -150,6 +177,18 @@ namespace FotomindUI
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             SerialPort1.Send(tbNewCmd.Text); //slechts tijdelijk, tot listbox werkt!
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbNewCmdTitle.Text != "" && tbNewCmd.Text != "")
+            {
+                ArduinoCommands newCmd = new ArduinoCommands();
+                newCmd.Title = tbNewCmdTitle.Text;
+                newCmd.Command = tbNewCmd.Text;
+                ArdCmds.Add(newCmd);
+                listCommands.ItemsSource = ArdCmds;
+            }
         }
     }
 }

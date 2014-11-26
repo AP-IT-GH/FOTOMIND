@@ -33,5 +33,15 @@ namespace FotomindUI
                     }
                  }
         }
+
+        public override string ToString()
+        {
+            return Title.ToString();
+        }
+
+        public string ToStringDetailed()
+        {
+            return Command.ToString();
+        }
     }
 }

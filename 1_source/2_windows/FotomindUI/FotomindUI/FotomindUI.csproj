@@ -54,7 +54,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ArduinoCommands.cs" />
-    <Compile Include="ArduinoCommandsList.cs" />
     <Compile Include="SerialPortInterface.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
