@@ -38,11 +38,16 @@ Take multiple pictures when sensor is triggered.
 <li>High speed Photography</li>
 This setup has to be executed in a dark room. The shutter is constantly open, an external flash is triggered and the shutter is closed when the laser beam is discontinued. 
 </ol>
-[Picture of Setup](https://copy.com/1qdt7rBKIJxfFwKW)
+![Picture of Setup](https://copy.com/thumbs_public/1qdt7rBKIJxfFwKW/Image1.jpg?size=1024)
 <p>[Result High Speed Photography](https://copy.com/hnnhiVT3sFPKF8mY)
 <P>[Result of Time Lapse](https://www.youtube.com/watch?v=Lv71nvoqJXY)
 ### Design ###
-[Picture ](https://copy.com/GHQAvVJfb3sU2DGc)
+![Picture 1](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image10.jpg?size=512)
+![Picture 2](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image7.jpg?size=1024)
+![Picture 3](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image8.jpg?size=1024)
+![Picture 4](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image9.jpg?size=1024)
+![Picture 5](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image4.jpg?size=1024)
+![Picture 6](https://copy.com/thumbs_public/GHQAvVJfb3sU2DGc/Image5.jpg?size=1024)
 ### Extra Information
 -  Short article about the result of the original project in St. Pölten, Austria
    [Link (Dutch)](http://eaict.ap.be/animation-summer-arduino-interaktiv/)
