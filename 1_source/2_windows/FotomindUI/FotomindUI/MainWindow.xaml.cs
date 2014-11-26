@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO.Ports;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace FotomindUI
 {
@@ -28,28 +30,54 @@ namespace FotomindUI
         public MainWindow()
         {
             InitializeComponent();
-            listCommands.DataContext = ArdCmds;
+            listCommands.DataContext = ArdCmds = new ObservableCollection<ArduinoCommands>();
+            var entree = LoadFromXml<ObservableCollection<ArduinoCommands>>("CmdXml.xml");
+            foreach (var c in entree)
+            {
+                ArdCmds.Add(c);
+            }
+            #region hardcode aanmaken commando's
+            /*
             ArdCmds = new ObservableCollection<ArduinoCommands>
             {
                 new ArduinoCommands
                 {
-                    Title = "Take Picture",
-                    Command = "Cmd for taking picture with arduino"
+                    Title = "Turn Off Led",
+                    Command = "9"
                 },
                 new ArduinoCommands
                 {
-                    Title = "Do something else",
-                    Command = "Blablibloebla"
-                },
-                new ArduinoCommands
-                {
-                    Title = "SendMe",
+                    Title = "Turn On Led",
                     Command = "8"
+                },
+                new ArduinoCommands
+                {
+                    Title = "Take picture",
+                    Command = "A"
                 }
             };
-            
+             * */
+            #endregion
             
         }
+
+         private void SerializeCommands(ObservableCollection<ArduinoCommands> p) //To XML
+        {
+            var serializer = new XmlSerializer(p.GetType(), new XmlRootAttribute("Commands"));
+            using (var writer = XmlWriter.Create("CmdXml.xml"))
+            {
+                serializer.Serialize(writer, p);
+            }
+        }
+
+         public static T LoadFromXml<T>(string filepath) // get commands from xml
+         {
+             var serializer = new XmlSerializer(typeof(T), new XmlRootAttribute("Commands"));
+             using (var reader = XmlReader.Create(filepath))
+             {
+                 return (T)serializer.Deserialize(reader);
+             }
+         }
 
         private void btnComPortRefresh_Click(object sender, RoutedEventArgs e)
         {
@@ -204,6 +232,9 @@ namespace FotomindUI
                 newCmd.Command = tbNewCmd.Text;
                 ArdCmds.Add(newCmd);
                 listCommands.ItemsSource = ArdCmds;
+                SerializeCommands(ArdCmds);
+                tbNewCmd.Clear();
+                tbNewCmdTitle.Clear();
             }
         }
     }
