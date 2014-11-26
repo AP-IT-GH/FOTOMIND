@@ -7,12 +7,16 @@
 CommunicationMedium Master;
 void setup()
 {
-  Master.SendData("abcdefghij");
-  Serial.begin(9600);
+  Serial.begin(57600);
+  Master.init();
 }
 
 void loop()
 {
-  Master.SendData("abcdefghij");
-  Serial.println(Master.RecieveData());
+  //Master.SendData("yourmessage max 8 characters");
+  String receipt = Master.RecieveData();
+  if(receipt!="empty")
+  {
+    Serial.println(receipt);
+  }
 }

@@ -10,11 +10,10 @@
 class CommunicationMedium
 {
 	public:
-		CommunicationMedium();
+		void init();
 		void SendData(String Message);
 		String RecieveData();
-	private:
-		RF24 _module;
+	private:		
 		const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };		
 };
 #endif
