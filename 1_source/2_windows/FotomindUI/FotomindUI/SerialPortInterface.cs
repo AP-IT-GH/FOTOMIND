@@ -64,7 +64,7 @@ namespace FotomindUI
         /// <summary>
         /// End of transmition byte in this case EOT (ASCII 4).
         /// </summary>
-        private byte terminator = 0x4;
+        private byte terminator = 0xA9;
 
         /// <summary>
         /// Gets or sets BaudRate (Default: 9600)

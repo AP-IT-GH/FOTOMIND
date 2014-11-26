@@ -40,6 +40,11 @@ namespace FotomindUI
                 {
                     Title = "Do something else",
                     Command = "Blablibloebla"
+                },
+                new ArduinoCommands
+                {
+                    Title = "SendMe",
+                    Command = "8"
                 }
             };
             
@@ -176,7 +181,18 @@ namespace FotomindUI
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            SerialPort1.Send(tbNewCmd.Text); //slechts tijdelijk, tot listbox werkt!
+            ArduinoCommands tempCmd = new ArduinoCommands();
+            tempCmd = (ArduinoCommands) listCommands.SelectedItem;
+            bool verify;
+            verify = SerialPort1.Send(tempCmd.Command);
+            if (verify)
+            {
+                lblStatus.Content = "Command sent to Arduino";
+            }
+            else
+            {
+                lblStatus.Content = "Could not send command";
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
