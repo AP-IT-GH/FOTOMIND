@@ -1,4 +1,4 @@
-#include <ArduinoInteraktiv.h>
+ #include <ArduinoInteraktiv.h>
 #include <DistanceSRF04.h>
 
 DistanceSRF04 Dist;
@@ -13,7 +13,7 @@ void setup()
 {
   camera.Start(); //This is the initialisation for de Pin configuration.
   Serial.begin(9600);
-  Dist.begin(4,5);
+  Dist.begin(4,5); //(echo, trigger)
 }
 
 void loop()
@@ -22,8 +22,11 @@ void loop()
   Serial.print("\nDistance in centimers: ");
   Serial.print(distance);
  
+  //if (distance <= 10)
+  //{
   camera.SinglePicture();
   delay(3000);
+  //}
   
  
   
