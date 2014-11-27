@@ -13,11 +13,6 @@ void setup()
 
 void loop()
 {
-<<<<<<< HEAD
-  Master.SendData("abcdefghij");
-  Serial.println(Master.RecieveData());
-}
-=======
   //Master.SendData("yourmessage max 8 characters");
   String receipt = Master.RecieveData();
   if(receipt!="empty")
@@ -25,4 +20,3 @@ void loop()
     Serial.println(receipt);
   }
 }
->>>>>>> origin/master
