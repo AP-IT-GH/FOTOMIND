@@ -44,11 +44,11 @@ void loop()
       LatestReceive = receipt;             
     }
     //if loops
-    if(receipt == UltraSonicKey)
+    if(LatestReceive == UltraSonicKey)
       triggerUltrasonic();
-    else if(receipt == TriggerManualKey)
+    else if(LatestReceive == TriggerManualKey)
       triggerManual();
-    else if(receipt == NoTriggerKey)
+    else if(LatestReceive == NoTriggerKey)
       noMoreTriggers(); 
   #endif
 }
