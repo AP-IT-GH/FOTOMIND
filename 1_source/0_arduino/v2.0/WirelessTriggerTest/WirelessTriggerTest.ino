@@ -6,8 +6,8 @@
 #include <ArduinoInteraktiv.h>
 #include <DistanceSRF04.h>
 
-#define SENDER
-//#define RECEIVER
+//#define SENDER
+#define RECEIVER
 
 CommunicationMedium Master;
 
@@ -41,11 +41,12 @@ void loop()
     String receipt = Master.RecieveData();
     if(receipt!="empty")
     {
-      LatestReceive = receipt;             
+      LatestReceive = receipt;       
     }
     //if loops
     if(LatestReceive == UltraSonicKey)
       triggerUltrasonic();
+      
     else if(LatestReceive == TriggerManualKey)
       triggerManual();
     else if(LatestReceive == NoTriggerKey)
@@ -55,6 +56,7 @@ void loop()
 void triggerUltrasonic()
 {
   distance = Dist.getDistanceCentimeter();
+  Serial.println(distance);
   if (distance <= 10)
   {
     camera.SinglePicture();
