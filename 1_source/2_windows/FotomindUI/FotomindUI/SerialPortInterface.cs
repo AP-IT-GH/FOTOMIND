@@ -29,7 +29,7 @@ namespace FotomindUI
         /// <summary>
         /// BaudRate set to default for Serial Port Class
         /// </summary>
-        private int baudRate = 9600;
+        private int baudRate = 57600;
 
         /// <summary>
         /// DataBits set to default for Serial Port Class

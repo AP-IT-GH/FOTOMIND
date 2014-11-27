@@ -160,7 +160,7 @@ namespace FotomindUI
                     cboBaudRate.Items.Add(BR);
                 }
             }
-            cboBaudRate.Text = "9600";
+            cboBaudRate.Text = "57600";
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -220,7 +220,7 @@ namespace FotomindUI
             else
             {
                 lblStatus.Content = "Could not send command";
-            }
+            }          
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
