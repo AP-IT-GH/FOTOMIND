@@ -243,6 +243,8 @@ namespace FotomindUI
         {
             ArdCmds.Remove((ArduinoCommands)listCommands.SelectedItem);
             SerializeCommands(ArdCmds);
+
+            listCommands.SelectedIndex = listCommands.Items.Count;
         }
 
         private void btnSyncPhoto_Click(object sender, RoutedEventArgs e)
