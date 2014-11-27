@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.IO.Ports;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Net;
 
 namespace FotomindUI
 {
@@ -242,6 +243,31 @@ namespace FotomindUI
         {
             ArdCmds.Remove((ArduinoCommands)listCommands.SelectedItem);
             SerializeCommands(ArdCmds);
+        }
+
+        private void btnSyncPhoto_Click(object sender, RoutedEventArgs e)
+        {
+            WebClient wc = new WebClient();
+            wc.DownloadFileCompleted += wc_DownloadFileCompleted;
+
+            // File
+            string path = "http://10.22.3.95/fotomind/DATA/Planes/ShotView1/";
+            string name = "aircraft-67566_1280.jpg";
+           
+            
+            wc.DownloadFileAsync(new Uri(path + name),"foto.jpg");
+
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri(@"http://10.22.3.95/fotomind/DATA/Planes/ShotView1/aircraft-67566_1280.jpg", UriKind.RelativeOrAbsolute);
+            bi.EndInit();
+
+            imgLastImage.Source = bi;
+        }
+
+        void wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Download klaar");
         }
     }
 }
