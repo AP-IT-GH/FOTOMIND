@@ -68,7 +68,11 @@ void triggerUltrasonic()
 }
 void triggerManual()
 {
+  if(MustTrigger)
+  {
   camera.SinglePicture();
+  MustTrigger = false;
+  }
 }
 void noMoreTriggers()
 {
