@@ -15,7 +15,7 @@ String UltraSonicKey = "117";//u
 String TriggerManualKey = "105";//i
 String NoTriggerKey = "112";//p
 String LatestReceive = "";
-
+bool MustTrigger = false;
 DistanceSRF04 Dist;
 int distance;
 
@@ -41,14 +41,18 @@ void loop()
     String receipt = Master.RecieveData();
     if(receipt!="empty")
     {
-      LatestReceive = receipt;       
+      LatestReceive = receipt;   
+      MustTrigger = true;    
     }
     //if loops
     if(LatestReceive == UltraSonicKey)
       triggerUltrasonic();
       
     else if(LatestReceive == TriggerManualKey)
+    {
       triggerManual();
+       
+      }
     else if(LatestReceive == NoTriggerKey)
       noMoreTriggers(); 
   #endif
