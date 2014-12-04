@@ -1206,15 +1206,10 @@ design rules under a new name.</description>
 <contactref element="R3" pad="1"/>
 <wire x1="-86.36" y1="58.42" x2="-21.59" y2="86.36" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$4">
-<contactref element="R1" pad="2"/>
-<contactref element="PCB1" pad="8"/>
-<wire x1="-67.31" y1="72.39" x2="-40.894" y2="52.07" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="N$6">
 <contactref element="R3" pad="2"/>
-<contactref element="PCB1" pad="10"/>
-<wire x1="-45.974" y1="52.07" x2="-13.97" y2="86.36" width="0" layer="19" extent="1-1"/>
+<contactref element="PCB1" pad="8"/>
+<wire x1="-40.894" y1="52.07" x2="-13.97" y2="86.36" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="PCB1" pad="2"/>
@@ -1235,11 +1230,6 @@ design rules under a new name.</description>
 <contactref element="R4" pad="1"/>
 <contactref element="LED1" pad="A"/>
 <wire x1="-54.61" y1="72.39" x2="-31.75" y2="86.36" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$5">
-<contactref element="PCB1" pad="9"/>
-<contactref element="R2" pad="2"/>
-<wire x1="-77.47" y1="72.39" x2="-43.434" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="EXTFLASH" pad="1"/>
@@ -1308,6 +1298,16 @@ design rules under a new name.</description>
 <contactref element="PCB1" pad="A1"/>
 <wire x1="-64.77" y1="86.36" x2="-34.2646" y2="60.96" width="0" layer="19" extent="1-1"/>
 <wire x1="-29.21" y1="3.81" x2="-34.2646" y2="60.96" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$4">
+<contactref element="R1" pad="2"/>
+<contactref element="PCB1" pad="6"/>
+<wire x1="-67.31" y1="72.39" x2="-34.29" y2="52.07" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$5">
+<contactref element="PCB1" pad="7"/>
+<contactref element="R2" pad="2"/>
+<wire x1="-77.47" y1="72.39" x2="-36.83" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
