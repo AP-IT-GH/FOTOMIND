@@ -3462,13 +3462,14 @@ W = angled&lt;p&gt;
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="68.58" y1="33.02" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="33.02" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="96.52" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="96.52" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="96.52" x2="58.42" y2="83.82" width="0.1524" layer="91"/>
 <junction x="58.42" y="33.02"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="83.82" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="83.82" x2="58.42" y2="83.82" width="0.1524" layer="91"/>
 <junction x="58.42" y="83.82"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$1" class="0">

@@ -3364,13 +3364,13 @@ W = angled&lt;p&gt;
 <part name="R5" library="eagle-ltspice" deviceset="R" device="0204/7" value="1k"/>
 <part name="EXTFLASH" library="con-ptr500" deviceset="AK300/2" device=""/>
 <part name="CAMERA" library="con-ptr500" deviceset="AK300/3" device=""/>
-<part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="S1" library="switch-omron" deviceset="10-XX" device="" value="Trigger"/>
+<part name="S2" library="switch-omron" deviceset="10-XX" device="" value="Flash"/>
 <part name="R6" library="eagle-ltspice" deviceset="R" device="0204/7" value="10k"/>
 <part name="R7" library="eagle-ltspice" deviceset="R" device="0204/7" value="10k"/>
 <part name="PHOTORESISTOR" library="con-ptr500" deviceset="AK300/2" device=""/>
 <part name="R8" library="eagle-ltspice" deviceset="R" device="0204/7" value="10k"/>
-<part name="SV1" library="con-lstb" deviceset="MA04-2" device=""/>
+<part name="SV1" library="con-lstb" deviceset="MA04-2" device="" value="Wireless nRF24"/>
 <part name="EXTPOWER" library="con-ptr500" deviceset="AK300/2" device="">
 <attribute name="MF" value=""/>
 <attribute name="MPN" value=""/>
