@@ -161,6 +161,7 @@ namespace FotomindUI
                 if (verify == true)
                 {
                     lblStatus.Content = "Port opened";
+                    btnSend.IsEnabled = true;
                 }
                 else
                 {
@@ -173,6 +174,7 @@ namespace FotomindUI
         {
             SerialPort1.Close();
             lblStatus.Content = "Port Closed";
+            btnSend.IsEnabled = false;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -180,6 +182,7 @@ namespace FotomindUI
             addComs();
             listCommands.DataContext = ArdCmds;
             listCommands.ItemsSource = ArdCmds;
+            btnSend.IsEnabled = false;
         }
 
         private void addComs()
@@ -331,7 +334,19 @@ namespace FotomindUI
         {
             if (e.Key == Key.Next)
             {
-                btnSend_Click(this, e);
+                try
+                {
+                    listCommands.SelectedIndex = 0;
+                }
+                catch
+                {
+                    //do nothing, default selected index is also okay, btnSend_Click can handle possible errors
+                }
+                if (btnSend.IsEnabled)
+                {
+                    btnSend_Click(this, e);
+                }
+                
             }
         }
     }
