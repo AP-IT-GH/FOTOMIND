@@ -1,5 +1,5 @@
 # Raspberry Pi
-#Installation#
+####Installation####
 <p>
 First we downloaded the raspbian image to our computer.We copied the image to an SD card using Win32DiskImager. When the image is copied it is time to boot our Raspberry Pi. We run through the initial setup and now we are able to use the Raspberry Pi. Since we are using a 'AZERTY' keyboard and raspbian is using a querty keyboard as default we will be changing that as the first thing. We open the keyboard file using <code>sudo nano /etc/default/keyboard</code> and change the line <code>XKBLAYOUT="en"</code> to <code>XKBLAYOUT="be"</code>,save the file and restart the Raspberry Pi.
 </p>
@@ -55,7 +55,7 @@ We write a shell script <code>GetFileFromDirectoryAndSendToServer.sh</code> and 
 </ol>
 <code>
 <div>
-	We are using the bash shell
+	We are using the bash shell 
 </div>
 	#!/bin/bash <br/>
 <div>
@@ -108,7 +108,7 @@ It will search for camera's and use them if there are no cameras connected at st
 
 # Practical approach #
 <div>
-<p>We started of with a Nikon D3100 for testing, but experienced connection problems. The Canon 50d showed us no problems. </p>
+<p>We started of with a Nikon D3100 for testing, but experienced connection problems. The Canon 50d & Nikon D5200 showed us no problems. </p>
 </div>
 <div>
 <p>Next we removed the <code>-filename</code> variable in the <code>GphotoStartupScript.sh</code>, because it didn't work. </p>
@@ -131,29 +131,24 @@ It will search for camera's and use them if there are no cameras connected at st
 </div>
 
 # Sources #
-<div>
-Raspberry Pi image:</br>
+
+#### Raspberry Pi image: ####
 http://downloads.raspberrypi.org/raspbian_latest
-</div>
-<div>
-Win32DiskImager:</br>
+
+####Win32DiskImager:####
 http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-install.exe/download
-</div>
-<div>
-Access raspberry pi over direct ethernet<br/>
+
+####Access raspberry pi over direct ethernet####
 http://pihw.wordpress.com/guides/direct-network-connection/
-</div>
-<div>
-Ramdisk:<br/>
+
+####Ramdisk:####
 http://www.jamescoyle.net/how-to/943-create-a-ram-disk-in-linux
-</div>
-<div>
-gphoto download:<br/>
+
+####gphoto download:####
 http://sourceforge.net/projects/gphoto/files/latest/download?source=files
-</div>
-<div>
-gphoto2-updater:<br/>
+
+####gphoto2-updater:####
 https://github.com/gonzalo/gphoto2-updater
-</div>
+
 # Reminder #
 username for our pi is 'pi' and password is 'raspberrypi'

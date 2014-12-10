@@ -65,7 +65,6 @@ Result of Time Lapse (click to open in YouTube)
 ## Description: Fotomind V2.0 ##
 
 
-
 #Info about the project#
 
 -  Short article about the result of the original project in St. Pölten, Austria
@@ -77,8 +76,17 @@ Result of Time Lapse (click to open in YouTube)
 - Article about the collaboration between Artesis Plantijn University College    and St. Pölten University of Applied Sciences
    [Link (Dutch)](https://www.ap.be/nieuws/experiment-met-computer-van-de-toekomst/2178)
 
-## Overview ##
+Our assignment as seen in the first report:
+>We take via a structured way a couple of photo’s by controlling several camera’s at the same time trough an Arduino. Every camera has it’s own Arduino module. Every module connected to the camera is a slave & is wireless supervised by one master Arduino, so we can dynamically add & remove camera’s. Every camera has it’s own RaspberryPi to collect the photo’s on the camera and send them to the server. This function allows us to keep taking pictures without removing the SD card.
 
+## Overview ##
+In the first two weeks we created the basis for this project. We were able to register when the camera took a picture & load it on a server. Furthermore we were created a library that enables wireless communication between two Arduino's. The wireless connection is based on slave Arduino which receives the data & triggers the camera & the master Arduino which is connected to a computer. The master Arduino send information trough a RF module. For changing the modes in which the camera triggers we developed a WPF program for control.
+
+The remaining time was dedicated to finetuning & bringing it all together!
 
 ## Tests and Experiments
+In the last weeks we intensly tested the entire project, triggering the camera with different sensors: ultrasonic - piezzo - manual. 
+
+
 ## Conclusion ##
+All expectations from the assignment are completed & succesfull.

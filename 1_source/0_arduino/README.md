@@ -1,14 +1,18 @@
-# Arduino code
+# Arduino code #
 
 Plaats in deze folder enkel de Arduino bibliotheken die je voor het project hebt ontwikkeld.
 Vul onderstaande lijst aan wanneer je gebruik maakt van externe gemaintainde libraries.
 
-## Libraries
+## Libraries ##
+<ul>
+	<li>CommunicationMedium</li>
+	<li>DistanceSensor</li>
+	<li>RF-24-master</li>
+	<li>nRF_Library</li>
+</ul>
 
-
-## Externe libraries ontwikkeld binnen dit project:
-
+## Libraries we developed ##
  
-## Externe libraries van derden
+## Libraries of third parties ##
 
 

@@ -47,11 +47,11 @@ The backend will create a zip file and copy the pictures into this zip.
 ```php
 $zip = new ZipArchive();
 
-# create temporary zip folder on the server
+# Create temporary zip folder on the server:
 $tmp_file = tempnam('TEMP','');
 $zip->open($tmp_file, ZipArchive::CREATE);
 
-# loop through each file and at the files to the zip folder
+# Loop through each file and at the files to the zip folder
 foreach($arr_images as $image){
 	#create the path to the image
 	$final = $path . $image;
@@ -62,21 +62,21 @@ foreach($arr_images as $image){
 	#add it to the zip
   $zip->addFromString(basename($image),$download_file);
 }
-# close zip
+# Close zip
 $zip->close();
 ```
 When all the selected picture are in the temp stored zip the php file will send headers to the browser to download the zip.
 Code from [PHP Docs](http://docs.php.net/manual/da/function.readfile.php#83653)
 ```php
-# send the file to the browser as a download
+# Send the file to the browser as a download
 $file_name = basename($tmp_file);
 
-# set the download rate limit (=> 5046 kb/s)
+# Set the download rate limit (=> 5046 kb/s)
 $download_rate = 5046;
 # The temp file has no extention this will be added in to string.
 $download_file_name = $file_name.'.zip';
 
-# check if the temp file exist and is readable
+# Check if the temp file exist and is readable
 if(file_exists($tmp_file) && is_file($tmp_file))
 {
   # push headers to browser
