@@ -13,7 +13,9 @@ CommunicationMedium Master;
 
 String UltraSonicKey = "117";//u
 String TriggerManualKey = "105";//i
+String PiezoTriggerKey = "116";//t
 String NoTriggerKey = "112";//p
+String TriggerLaserKey = "108";//l
 String LatestReceive = "";
 bool MustTrigger = false;
 DistanceSRF04 Dist;
@@ -53,15 +55,18 @@ void loop()
       triggerManual();
        
       }
+      else if(LatestReceive == PiezoTriggerKey)
+      triggerPiezo();
+      else if (LatestReceive == TriggerLaserKey)
+      triggerLaser();
     else if(LatestReceive == NoTriggerKey)
       noMoreTriggers(); 
   #endif
 }
 void triggerUltrasonic()
 {
-  distance = Dist.getDistanceCentimeter();
-  Serial.println(distance);
-  if (distance <= 10)
+  distance = Dist.getDistanceCentimeter(); 
+  if (distance <= 170)
   {
     camera.SinglePicture();
   }
@@ -73,6 +78,18 @@ void triggerManual()
   camera.SinglePicture();
   MustTrigger = false;
   }
+}
+void triggerPiezo()
+{
+  int a = analogRead(A0);
+  if(a>=60)
+  {
+    camera.SinglePicture();
+  }
+}
+void triggerLaser()
+{
+  //implement
 }
 void noMoreTriggers()
 {
