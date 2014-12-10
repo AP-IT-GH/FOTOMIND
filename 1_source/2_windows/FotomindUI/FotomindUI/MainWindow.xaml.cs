@@ -326,5 +326,13 @@ namespace FotomindUI
         {
             MessageBox.Show("Download klaar");
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Next)
+            {
+                btnSend_Click(this, e);
+            }
+        }
     }
 }
