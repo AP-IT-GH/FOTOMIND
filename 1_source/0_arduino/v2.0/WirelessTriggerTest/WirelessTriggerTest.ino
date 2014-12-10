@@ -90,6 +90,11 @@ void triggerPiezo()
 void triggerLaser()
 {
   //implement
+  int a = analogRead(A1);
+  if(a>50)
+  {
+    camera.SinglePicture();
+  }
 }
 void noMoreTriggers()
 {
