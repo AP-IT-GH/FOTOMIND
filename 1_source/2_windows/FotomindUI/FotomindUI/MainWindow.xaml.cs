@@ -348,6 +348,21 @@ namespace FotomindUI
                 }
                 
             }
+            if (e.Key == Key.Prior)
+            {
+                try
+                {
+                    listCommands.SelectedIndex = 4;
+                }
+                catch
+                {
+                    //do nothing, default selected index is also okay, btnSend_Click can handle possible errors
+                }
+                if (btnSend.IsEnabled)
+                {
+                    btnSend_Click(this, e);
+                }
+            }
         }
     }
 }
