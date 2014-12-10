@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -32,11 +33,50 @@ namespace FotomindUI
         {
             InitializeComponent();
             listCommands.DataContext = ArdCmds = new ObservableCollection<ArduinoCommands>();
-            var entree = LoadFromXml<ObservableCollection<ArduinoCommands>>("CmdXml.xml");
-            foreach (var c in entree)
+            
+            try
             {
-                ArdCmds.Add(c);
+                var entree = LoadFromXml<ObservableCollection<ArduinoCommands>>("CmdXml.xml");
+                foreach (var c in entree)
+                {
+                    ArdCmds.Add(c);
+                }
             }
+            catch (FileNotFoundException)
+            {
+
+                ArdCmds = new ObservableCollection<ArduinoCommands>
+                {
+                    new ArduinoCommands
+                    {
+                        Title = "Trigger Manual",
+                        Command = "i"
+                    },
+                    new ArduinoCommands
+                    {
+                        Title = "Trigger Ultrasoon",
+                        Command = "u"
+                    },
+                    new ArduinoCommands
+                    {
+                        Title = "Trigger Niks",
+                        Command = "p"
+                    },
+                    new ArduinoCommands
+                    {
+                        Title = "Trigger Piëzo",
+                        Command = "t"
+                    },
+                    new ArduinoCommands
+                    {
+                        Title = "Trigger Laser",
+                        Command = "l"
+                    }
+
+                };
+                SerializeCommands(ArdCmds);
+            }
+           
             #region hardcode aanmaken commando's
             /*
             ArdCmds = new ObservableCollection<ArduinoCommands>
@@ -53,13 +93,28 @@ namespace FotomindUI
                 },
                 new ArduinoCommands
                 {
-                    Title = "Take picture",
-                    Command = "A"
+                    Title = "Trigger Manual",
+                    Command = "i"
+                },
+                new ArduinoCommands
+                {
+                    Title = "Trigger Ultrasoon",
+                    Command = "u"
+                },
+                new ArduinoCommands
+                {
+                    Title = "Trigger Niks",
+                    Command = "p"
+                },
+                new ArduinoCommands
+                {
+                    Title = "Trigger Piëzo",
+                    Command = "t"
                 }
             };
              * */
             #endregion
-            
+
         }
 
          private void SerializeCommands(ObservableCollection<ArduinoCommands> p) //To XML
