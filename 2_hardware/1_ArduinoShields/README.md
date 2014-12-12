@@ -11,7 +11,7 @@ We remade and optimized the existing schematic of FotoMind 1.0:
 <li>Added a on-board ultrasonic sensor (HC-SR04) to measure distance </li>
 </ul>
 
-[schematic](https://www.dropbox.com/s/dkf0853rwxmuuqd/Schematic.PNG?dl=0)
+![schematic](Schematic.PNG)
 
 
 ##The PCB:##
@@ -22,4 +22,4 @@ We made a very multifunctional PCB that we easy can adjust by placing/or not pla
 <li>We have the option to put 3 opto's on the board for trigger(1), Flash and focus</li>
 <li>We also have countless options due the multiple connectors connected to the arduino ports and vcc.</li>
 </ul>
-[PCB-design](https://www.dropbox.com/s/i2g31ev0dzjte93/PCB-design.PNG?dl=0)
+![PCB-design](PCB-design.PNG)
