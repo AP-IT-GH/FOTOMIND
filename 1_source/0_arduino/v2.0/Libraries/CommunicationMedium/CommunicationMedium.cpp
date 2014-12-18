@@ -9,6 +9,7 @@
 RF24 _module(9,10);
 void CommunicationMedium::init()
 {
+	//configuration of RF24 library
 	_module.begin();
 	_module.setDataRate(RF24_250KBPS);
 	_module.setPALevel(RF24_PA_MAX);
@@ -20,23 +21,27 @@ void CommunicationMedium::init()
 	_module.openReadingPipe(1,pipes[1]);    
 	_module.startListening();
 }
-
+//Sends string to other endpoint(s) listening
 void CommunicationMedium::SendData(String Message)
 {
+	//Get the message and append # for easier communication
 	Message = '#' + Message;
 	char tmpMessage[10];
+	//copy the content of Message in tmpMessage
 	strcpy(tmpMessage,Message.c_str());
 	Serial.println(tmpMessage);
+	//SEND MODE
 	_module.openWritingPipe(pipes[1]);
     _module.openReadingPipe(0,pipes[0]);  
     _module.stopListening();
 	bool ok = _module.write(&tmpMessage,strlen(tmpMessage));	
+	//RECIEVE MODE
 	_module.openWritingPipe(pipes[0]);
     _module.openReadingPipe(1,pipes[1]); 
     _module.startListening();  
 	tmpMessage[0]=0;	
 }
-
+//Recieve data that is send using senddata
 String CommunicationMedium::RecieveData()
 {	
 	int len = 0;
@@ -60,7 +65,7 @@ String CommunicationMedium::RecieveData()
 		}
 		return ReturnPayload;
 	}
-	
+	//return empty when there is no precieding # 
     RecvPayload[0] = 0;  // Clear the buffers
 	return "empty";
 }
