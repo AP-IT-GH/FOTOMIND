@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:fotomindUi="clr-namespace:FotomindUI"
-        Title="MainWindow" Height="650" Width="525" Loaded="Window_Loaded" Closing="Window_Closing" MinHeight="650" MinWidth="525" KeyDown="Window_KeyDown">   
+        Title="FotoMind" Height="650" Width="525" Loaded="Window_Loaded" Closing="Window_Closing" MinHeight="650" MinWidth="525" KeyDown="Window_KeyDown">   
         <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
