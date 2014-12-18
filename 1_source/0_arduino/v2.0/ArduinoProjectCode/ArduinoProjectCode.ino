@@ -8,45 +8,59 @@
 
 //#define SENDER
 #define RECEIVER
-
+//use our library for communication
 CommunicationMedium Master;
-
+//Here you can add the keys which will be used for their corresponding function
 String UltraSonicKey = "117";//u
 String TriggerManualKey = "105";//i
 String PiezoTriggerKey = "116";//t
 String NoTriggerKey = "112";//p
 String TriggerLaserKey = "108";//l
 String LatestReceive = "";
+//bool used to limit the triggering so it doestn trigger all the time
 bool MustTrigger = false;
+//Use distancesensor
 DistanceSRF04 Dist;
 int distance;
-
+//use library made by Bernd @ Austria
 ArduinoInteraktiv camera; 
 
 void setup()
 {
+  //start the camerashield
   camera.Start(); 
+  //serial communication enable
   Serial.begin(57600);
-  Master.init();  
+  //start our wireless library
+  Master.init(); 
+ //start using distancesensor 
   Dist.begin(4,5); //(echo, trigger)
 }
 void loop()
 {
+  //here comes the code for the sending arduino, this one will be connected to a computer
   #ifdef SENDER
     if(Serial.available()>0)
     {
+      //get the text from the serial port
       byte incomingByte = Serial.read();
+      //send the text which is recieved over serial port
       Master.SendData((String)incomingByte);      
     }
   #endif
+  //this code compiles for the receiver
   #ifdef RECEIVER
+  //get the data from our RF module
     String receipt = Master.RecieveData();
+    //if the recieved data is contains the word empty we wouldn't want to do something
     if(receipt!="empty")
     {
-      LatestReceive = receipt;   
+      //get the value recieved
+      LatestReceive = receipt;
+       //trigger the camera when nessesary   
       MustTrigger = true;    
     }
-    //if loops
+    //check which function needs to be executed
     if(LatestReceive == UltraSonicKey)
       triggerUltrasonic();
       
@@ -63,6 +77,7 @@ void loop()
       noMoreTriggers(); 
   #endif
 }
+//functions which will be executed when nessesary
 void triggerUltrasonic()
 {
   distance = Dist.getDistanceCentimeter(); 
