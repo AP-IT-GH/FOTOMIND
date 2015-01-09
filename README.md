@@ -22,6 +22,7 @@ Further info can be found in the following folders:
  * 2_hardware
  * 3_documentation
  * 4_presentation
+ 
 
 #Groups#
 
@@ -32,3 +33,8 @@ We divided the project in different groups.
 - Transmission
 - Schematic and PCB Design
 - Storage pictures
+
+## Youtube##
+
+https://www.youtube.com/watch?v=s_ummqgnZ5k 
+
